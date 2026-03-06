@@ -1,0 +1,235 @@
+
+/* ESTILOS PARA ACCESIBILIDAD DOBLE A*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* CONTRASTE AA: (requiere >4.5:1) */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #fff;
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* ENCABEZADO CON BUEN CONTRASTE */
+header {
+    background: #2c3e50;  /* Azul oscuro */
+    color: white;
+    padding: 20px;
+    margin-bottom: 25px;
+    border-radius: 5px;
+}
+
+h1 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 1.4em;
+    color: #2c3e50;
+    margin: 20px 0 15px 0;
+}
+
+h3 {
+    font-size: 1.2em;
+    color: #2c3e50;
+    margin: 15px 0 10px 0;
+}
+
+/* ENLACES DE SALTO */
+.skip-link {
+    position: absolute;
+    top: -50px;
+    left: 10px;
+    background: #2c3e50;
+    color: white;
+    padding: 12px 15px;
+    text-decoration: none;
+    border-radius: 0 0 5px 5px;
+    z-index: 1000;
+    font-weight: bold;
+}
+
+/* Ocultos inicialmente, visibles solo con foco */
+.skip-link:not(:focus) {
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+.skip-link:focus {
+    top: 10px;
+    outline: 3px solid #ffc107;  /* Amarillo alto contraste */
+    outline-offset: 2px;
+}
+
+/* NAVEGACIÓN */
+nav {
+    margin-top: 15px;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.nav-list a {
+    color: white;
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 3px;
+}
+
+.nav-list a:hover,
+.nav-list a:focus {
+    background: rgba(255, 255, 255, 0.2);
+    outline: 2px solid #ffc107;
+}
+
+/* CONTENIDO PRINCIPAL */
+main {
+    margin-bottom: 30px;
+}
+
+section {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+}
+
+/* VIDEO ACCESIBLE */
+video {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 15px 0;
+    border: 2px solid #2c3e50;
+    border-radius: 5px;
+}
+
+video:focus {
+    outline: 3px solid #0066cc;
+    outline-offset: 2px;
+}
+
+/* TEXTO Y PÁRRAFOS */
+p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+/* ENLACES CON BUEN CONTRASTE AA */
+a {
+    color: #0066cc;  /* Azul: 7.0:1 sobre blanco */
+    text-decoration: underline;
+}
+
+a:hover,
+a:focus {
+    color: #004499;
+    background: #fff3cd;  /* Fondo amarillo claro */
+    outline: 2px solid #0066cc;
+}
+
+/* PIE DE PÁGINA */
+footer {
+    background: #2c3e50;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    border-radius: 5px;
+    margin-top: 30px;
+}
+
+/* ====================
+   RESPONSIVE - AA
+   ==================== */
+
+/* TABLETS */
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+    
+    h1 {
+        font-size: 1.6em;
+    }
+    
+    h2 {
+        font-size: 1.3em;
+    }
+    
+    section {
+        padding: 15px;
+    }
+    
+    .nav-list {
+        gap: 10px;
+    }
+    
+    .skip-link {
+        left: 5px;
+        padding: 10px 12px;
+        font-size: 0.9em;
+    }
+}
+
+/* MÓVILES */
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+        font-size: 16px;  /* Tamaño mínimo accesible */
+    }
+    
+    .nav-list {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .nav-list a {
+        display: block;
+        padding: 8px;
+    }
+    
+    .skip-link:focus {
+        font-size: 0.85em;
+        padding: 8px 10px;
+    }
+    
+    video {
+        border-width: 1px;
+    }
+}
+
+/* ====================
+   ENFOQUE VISIBLE - AA
+   ==================== */
+
+/* Solo elementos interactivos */
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus,
+video:focus {
+    outline: 3px solid #0066cc;
+    outline-offset: 2px;
+}
+
+/* Skip links con foco especial */
+.skip-link:focus {
+    outline: 3px solid #ffc107;
+}
